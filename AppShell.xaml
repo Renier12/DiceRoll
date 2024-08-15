@@ -7,9 +7,17 @@
     Shell.FlyoutBehavior="Disabled"
     Title="Dice_roll">
 
-    <ShellContent
-        Title="Home"
-        ContentTemplate="{DataTemplate local:MainPage}"
-        Route="MainPage" />
+    <TabBar>
+        <ShellContent
+            Title="Home"
+            ContentTemplate="{DataTemplate local:MainPage}"
+            Route="MainPage" />
+
+        <ShellContent
+        Title="Dice Roll"
+        ContentTemplate="{DataTemplate local:DRoll}"
+        Route="NewPage" />
+    </TabBar>
+
 
 </Shell>

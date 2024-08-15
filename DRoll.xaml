@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Dice_roll.DRoll"
+             Title="Dice Roll">
+    <VerticalStackLayout>
+        <Label
+            x:Name="LabelInstructions"
+            Text="Select the size of dice"
+            HorizontalOptions="Center"
+            />
+        <RadioButton Content="4" 
+                     x:Name="RadioButtonD4"/>
+        <RadioButton Content="6" 
+                     x:Name="RadioButtonD6"/>
+        <RadioButton Content="8" 
+                     x:Name="RadioButtonD8"/>
+        <RadioButton Content="12" 
+                     x:Name="RadioButtonD12"/>
+        <RadioButton Content="20"
+                     x:Name="RadioButtonD20"
+                 IsChecked="true" />
+        <Button
+            Text="Click!"
+            HorizontalOptions="Center"
+            VerticalOptions="Center"
+            Clicked="ButtonClicked"
+            />
+
+        <Label
+            x:Name="LabelOut"
+            Text="Label Out"
+            VerticalOptions="Center"
+            HorizontalOptions="Center"
+           />
+
+    </VerticalStackLayout>
+    
+</ContentPage>
+    
