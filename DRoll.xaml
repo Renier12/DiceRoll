@@ -3,43 +3,46 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Dice_roll.DRoll"
              Title="Dice Roll">
-    <VerticalStackLayout>
+    <VerticalStackLayout
+        Spacing="20">
         <Label
             x:Name="LabelInstructions"
             Text="Select the size of dice"
             HorizontalOptions="Center"
             />
-        <RadioButton Content="4" 
-                     x:Name="RadioButtonD4"/>
-        <RadioButton Content="6" 
-                     x:Name="RadioButtonD6"/>
-        <RadioButton Content="8" 
-                     x:Name="RadioButtonD8"/>
-        <RadioButton Content="12" 
-                     x:Name="RadioButtonD12"/>
-        <RadioButton Content="20"
-                     x:Name="RadioButtonD20"
-                 IsChecked="true" />
-        <Button
-            Text="Click!"
-            HorizontalOptions="Center"
-            VerticalOptions="Center"
-            Clicked="ButtonClicked"
-            />
+        <HorizontalStackLayout
+            Margin="20"
+            Spacing="20">
+            <RadioButton Content="4" 
+                         x:Name="RadioButtonD4"/>
+            <RadioButton Content="6" 
+                         x:Name="RadioButtonD6"/>
+            <RadioButton Content="8" 
+                         x:Name="RadioButtonD8"/>
+            <RadioButton Content="12" 
+                         x:Name="RadioButtonD12"/>
+            <RadioButton Content="20"
+                         x:Name="RadioButtonD20"
+                     IsChecked="true" />            
+        </HorizontalStackLayout>
 
-        <Label
-            x:Name="LabelOut"
-            Text="Label Out"
-            VerticalOptions="Center"
-            HorizontalOptions="Center"
-           />
-        
-        <Label
-            x:Name="LabelOut2"
-            Text="Label Out 2"
-            VerticalOptions="Center"
-            HorizontalOptions="Center"
-           />
+        <HorizontalStackLayout
+            Margin="20"
+            Spacing="100">
+            <Button
+                Text="Click!"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                Clicked="ButtonClicked"
+                />
+
+            <Label
+                x:Name="LabelOut"
+                Text="Label Out"
+                VerticalOptions="Center"
+                HorizontalOptions="Center"
+               />
+        </HorizontalStackLayout>       
 
     </VerticalStackLayout>
     
