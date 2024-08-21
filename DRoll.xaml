@@ -33,6 +33,13 @@
             VerticalOptions="Center"
             HorizontalOptions="Center"
            />
+        
+        <Label
+            x:Name="LabelOut2"
+            Text="Label Out 2"
+            VerticalOptions="Center"
+            HorizontalOptions="Center"
+           />
 
     </VerticalStackLayout>
     
