@@ -11,39 +11,68 @@
             HorizontalOptions="Center"
             />
         <HorizontalStackLayout
-            Margin="20"
-            Spacing="20">
-            <RadioButton Content="4" 
+            Margin="10"
+            HorizontalOptions="Fill">
+            <RadioButton Content="D4" 
                          x:Name="RadioButtonD4"/>
-            <RadioButton Content="6" 
+            <RadioButton Content="D6" 
                          x:Name="RadioButtonD6"/>
-            <RadioButton Content="8" 
+            <RadioButton Content="D8" 
                          x:Name="RadioButtonD8"/>
-            <RadioButton Content="12" 
+            <RadioButton Content="D10" 
+                         x:Name="RadioButtonD10"/>
+            <RadioButton Content="D12" 
                          x:Name="RadioButtonD12"/>
-            <RadioButton Content="20"
+            <RadioButton Content="D20"
                          x:Name="RadioButtonD20"
                      IsChecked="true" />            
         </HorizontalStackLayout>
 
         <HorizontalStackLayout
             Margin="20"
-            Spacing="100">
+            Spacing="60">
             <Button
                 Text="Click!"
-                HorizontalOptions="Center"
+                HorizontalOptions="CenterAndExpand"
                 VerticalOptions="Center"
                 Clicked="ButtonClicked"
                 />
+                
+        </HorizontalStackLayout>
 
+        <HorizontalStackLayout
+            Margin="20"
+            Spacing="60">
             <Label
-                x:Name="LabelOut"
-                Text="Label Out"
+                x:Name="LabelOutInfo"
+                Text="You rolled a : "
                 VerticalOptions="Center"
                 HorizontalOptions="Center"
                />
-        </HorizontalStackLayout>       
+            <Label
+                x:Name="LabelOut"
+                VerticalOptions="Center"
+                HorizontalOptions="Center"
+               />
 
+           
+        </HorizontalStackLayout>
+
+        <HorizontalStackLayout
+            Margin="20"
+            Spacing="60">
+            <Label
+                 x:Name="LabelOutPercInfo"
+                 Text="Percentage result of roll: "
+                 VerticalOptions="Center"
+                 HorizontalOptions="Center"
+                 />
+            <Label
+                 x:Name="LabelOutPerc"
+                 VerticalOptions="Center"
+                 HorizontalOptions="Center"
+                 />
+        </HorizontalStackLayout>
     </VerticalStackLayout>
     
 </ContentPage>

@@ -10,7 +10,9 @@ public partial class DRoll : ContentPage
 		InitializeComponent();
 	}
 
-    private int number1 = 2;
+    private int selectedDiceSize = 0;
+    private int diceResult = 0;
+    private double diceRselutPerc = 0;
     Random randomNumber = new Random();
 
     public int RandomNumber(int givenNumber)
@@ -25,22 +27,37 @@ public partial class DRoll : ContentPage
     {
         if (RadioButtonD4.IsChecked == true)
         {
-            number1 = 4;
+            selectedDiceSize = 4;
         } else if (RadioButtonD6.IsChecked == true)
         {
-            number1 = 6;
+            selectedDiceSize = 6;
         }else if (RadioButtonD8.IsChecked == true)
         {
-            number1 = 8;
+            selectedDiceSize = 8;
+        }else if (RadioButtonD10.IsChecked == true)
+        {
+            selectedDiceSize = 10;
         }else if (RadioButtonD12.IsChecked == true)
         {
-            number1 = 12;
-        }else if (RadioButtonD20.IsChecked == true)
+            selectedDiceSize = 12;
+        }
+        else if (RadioButtonD20.IsChecked == true)
         {
-            number1 = 20;
+            selectedDiceSize = 20;
         }
 
-        LabelOut.Text = RandomNumber(number1).ToString(); ;
+        //Increment number1 to generat a rndom number between 0 and the upper boundry
+        selectedDiceSize++;
+        diceResult = RandomNumber(selectedDiceSize);
+
+        LabelOut.Text = diceResult.ToString();
+
+        //Had to do the following code in multiple lines. For some reason I got 0 when doing all in 1 line.
+        selectedDiceSize--;
+        diceResult = diceResult * 100;
+        diceRselutPerc = diceResult / selectedDiceSize;
+
+        LabelOutPerc.Text = (diceRselutPerc).ToString();
 
     }
 }
