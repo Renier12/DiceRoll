@@ -7,24 +7,11 @@
         <VerticalStackLayout
             Padding="30,0"
             Spacing="40">          
-
+            
             <Label
-                Text="Welcome to Dice roll!"
-                VerticalOptions="Center"
-                Style="{StaticResource Headline}"
-                SemanticProperties.HeadingLevel="Level1" />
+                Text="This application will generate random dice rolls. Range of numbers is dependent on the size of dice selected. Multiple dice can be selected for a variety of games. The sum of the dice is calculated and displayed. The D10 is not included in the sum. A percentage is diaplayed for the D10 roll." />
 
-            <Label
-                Text="This appliocation was made as an excercise. This application will generate random nubers. Range of numbers is dependent on the size of dice selected. "
-        
-                SemanticProperties.Description="Welcome to dot net Multi platform App U I" />
 
-            <Button
-                x:Name="CounterBtn"
-                Text="Click me" 
-                SemanticProperties.Hint="Counts the number of times you click"
-                Clicked="OnCounterClicked"
-                HorizontalOptions="Fill" />
         </VerticalStackLayout>
     </ScrollView>
 
