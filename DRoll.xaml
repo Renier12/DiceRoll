@@ -3,48 +3,233 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Dice_roll.DRoll"
              Title="Dice Roll">
-    <VerticalStackLayout
-        Spacing="20">
-        <Label
-            x:Name="LabelInstructions"
-            Text="Select the size of dice"
-            HorizontalOptions="Center"
-            />
-        <HorizontalStackLayout
-            Margin="20"
-            Spacing="20">
-            <RadioButton Content="4" 
-                         x:Name="RadioButtonD4"/>
-            <RadioButton Content="6" 
-                         x:Name="RadioButtonD6"/>
-            <RadioButton Content="8" 
-                         x:Name="RadioButtonD8"/>
-            <RadioButton Content="12" 
-                         x:Name="RadioButtonD12"/>
-            <RadioButton Content="20"
-                         x:Name="RadioButtonD20"
-                     IsChecked="true" />            
+
+    <VerticalStackLayout>
+
+        <!--#region Heading-->
+        <HorizontalStackLayout>
+            <Label
+Padding="10"
+FontSize="20"
+Text="Select dice to roll">
+            </Label>
+        </HorizontalStackLayout>
+        <!--#endregion Heading-->
+
+        <HorizontalStackLayout>
+
+            <!--#region Dice1-->
+            <VerticalStackLayout
+Padding="5">
+
+                <CheckBox  
+x:Name="checkBoxDice1"
+ScaleX="2.5"
+ScaleY="2.5"
+IsChecked="False"
+CheckedChanged="checkBoxDice1CheckedChanged"
+>
+                </CheckBox>
+
+                <Picker
+x:Name="PickerDice1"
+Title="Dice Size"
+IsEnabled="False"
+HorizontalTextAlignment="Center">
+                    <Picker.ItemsSource>
+                        <x:Array Type="{x:Type x:Int32}">
+                            <x:Int32>4</x:Int32>
+                            <x:Int32>6</x:Int32>
+                            <x:Int32>8</x:Int32>
+                            <x:Int32>12</x:Int32>
+                            <x:Int32>20</x:Int32>
+                        </x:Array>
+                    </Picker.ItemsSource>
+
+                </Picker>
+            </VerticalStackLayout>
+            <!--#endregion Dice1-->
+
+            <!--#region Dice2-->
+            <VerticalStackLayout
+Padding="5">
+
+                <CheckBox  
+x:Name="checkBoxDice2"
+ScaleX="2.5"
+ScaleY="2.5"
+IsChecked="False"
+CheckedChanged="checkBoxDice2CheckedChanged"
+>
+                </CheckBox>
+
+                <Picker
+x:Name="PickerDice2"
+Title="Dice Size"
+IsEnabled="False"
+HorizontalTextAlignment="Center">
+                    <Picker.ItemsSource>
+                        <x:Array Type="{x:Type x:Int32}">
+                            <x:Int32>4</x:Int32>
+                            <x:Int32>6</x:Int32>
+                            <x:Int32>8</x:Int32>
+                            <x:Int32>12</x:Int32>
+                            <x:Int32>20</x:Int32>
+                        </x:Array>
+                    </Picker.ItemsSource>
+
+                </Picker>
+            </VerticalStackLayout>
+            <!--#endregion Dice2-->
+
+            <!--#region Dice3-->
+            <VerticalStackLayout
+Padding="5">
+
+                <CheckBox  
+x:Name="checkBoxDice3"
+ScaleX="2.5"
+ScaleY="2.5"
+IsChecked="False"
+CheckedChanged="checkBoxDice3CheckedChanged"
+>
+                </CheckBox>
+
+                <Picker
+x:Name="PickerDice3"
+Title="Dice Size"
+IsEnabled="False"
+HorizontalTextAlignment="Center">
+                    <Picker.ItemsSource>
+                        <x:Array Type="{x:Type x:Int32}">
+                            <x:Int32>4</x:Int32>
+                            <x:Int32>6</x:Int32>
+                            <x:Int32>8</x:Int32>
+                            <x:Int32>12</x:Int32>
+                            <x:Int32>20</x:Int32>
+                        </x:Array>
+                    </Picker.ItemsSource>
+
+                </Picker>
+            </VerticalStackLayout>
+            <!--#endregion Dice3-->
+
+            <!--#region Dice4-->
+            <VerticalStackLayout
+Padding="5">
+
+                <CheckBox  
+x:Name="checkBoxDice4"
+ScaleX="2.5"
+ScaleY="2.5"
+IsChecked="False" 
+CheckedChanged="checkBoxDice4CheckedChanged"
+>
+                </CheckBox>
+
+                <Picker
+x:Name="PickerDice4"
+Title="Dice Size"
+IsEnabled="False"
+HorizontalTextAlignment="Center">
+                    <Picker.ItemsSource>
+                        <x:Array Type="{x:Type x:Int32}">
+                            <x:Int32>4</x:Int32>
+                            <x:Int32>6</x:Int32>
+                            <x:Int32>8</x:Int32>
+                            <x:Int32>12</x:Int32>
+                            <x:Int32>20</x:Int32>
+                        </x:Array>
+                    </Picker.ItemsSource>
+
+                </Picker>
+            </VerticalStackLayout>
+            <!--#endregion Dice4-->
+
+            <!--#region DiceD10-->
+            <VerticalStackLayout
+Padding="5">
+
+                <CheckBox  
+x:Name="checkBoxDiceD10"
+ScaleX="2.5"
+ScaleY="2.5"
+IsChecked="False"    
+CheckedChanged="checkBoxDiceD10CheckedChanged"
+>
+                </CheckBox>
+
+                <Picker
+x:Name="PickerDiceD10"
+Title="D10"
+IsEnabled="False"
+HorizontalTextAlignment="Center">
+                    <Picker.ItemsSource>
+                        <x:Array Type="{x:Type x:Int32}">
+                            <x:Int32>10</x:Int32>
+                        </x:Array>
+                    </Picker.ItemsSource>
+
+                </Picker>
+
+            </VerticalStackLayout>
+            <!--#endregion DiceD10-->
+
         </HorizontalStackLayout>
 
-        <HorizontalStackLayout
-            Margin="20"
-            Spacing="100">
+        <!--#region Output-->
+        <VerticalStackLayout>
             <Button
-                Text="Click!"
-                HorizontalOptions="Center"
-                VerticalOptions="Center"
-                Clicked="ButtonClicked"
-                />
+Text="Roll!"
+FontSize="50"
+Clicked="ButtonClicked"
+HorizontalOptions="FillAndExpand"
+Padding="40"
+/>
+            <Label
+Padding="10"
+FontSize="30"
+Text="You Rolled:">
+            </Label>
+            <Label
+x:Name="LabelOutDice1"
+Padding="10"
+FontSize="20"
+Text=""
+/>
+            <Label
+x:Name="LabelOutDice2"
+Padding="10"
+FontSize="20"
+Text=""
+/>
+            <Label
+x:Name="LabelOutDice3"
+Padding="10"
+FontSize="20"
+Text=""
+/>
+            <Label
+x:Name="LabelOutDice4"
+Padding="10"
+FontSize="20"
+Text=""
+/>
+            <Label
+x:Name="LabelOutSum"
+Padding="10"
+FontSize="20" 
+Text=""/>
 
             <Label
-                x:Name="LabelOut"
-                Text="Label Out"
-                VerticalOptions="Center"
-                HorizontalOptions="Center"
-               />
-        </HorizontalStackLayout>       
+x:Name="LabelOutDiceD10"
+Padding="10"
+FontSize="20"
+Text=""
+/>
+        </VerticalStackLayout>
+        <!--#endregion Output-->
 
     </VerticalStackLayout>
-    
 </ContentPage>
     

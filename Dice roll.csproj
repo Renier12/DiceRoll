@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
-		<TargetFrameworks>net8.0-android;net8.0-ios;net8.0-maccatalyst</TargetFrameworks>
+		<TargetFrameworks>net8.0-android;net8.0-maccatalyst</TargetFrameworks>
 		<TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('windows'))">$(TargetFrameworks);net8.0-windows10.0.19041.0</TargetFrameworks>
 		<!-- Uncomment to also build the tizen app. You will need to install tizen by following this: https://github.com/Samsung/Tizen.NET -->
 		<!-- <TargetFrameworks>$(TargetFrameworks);net8.0-tizen</TargetFrameworks> -->
@@ -36,11 +36,35 @@
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.17763.0</SupportedOSPlatformVersion>
 		<TargetPlatformMinVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.17763.0</TargetPlatformMinVersion>
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'tizen'">6.5</SupportedOSPlatformVersion>
+		
+		<AndroidKeyStore>True</AndroidKeyStore>
+		<AndroidSigningKeyAlias>dice-roll-alias</AndroidSigningKeyAlias>
+		<AndroidSigningKeyPass>droll482</AndroidSigningKeyPass>
+		<AndroidSigningKeyStore>d:\User\Programmingstuff\C#\MobileDevelopment\Dice roll\dice-roll.keystore</AndroidSigningKeyStore>
+		<AndroidSigningStorePass>droll482</AndroidSigningStorePass>
+		
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net8.0-android|AnyCPU'">
+	  <DebugSymbols>True</DebugSymbols>
+		<AndroidKeyStore>True</AndroidKeyStore>
+		<AndroidSigningKeyAlias>dice-roll-alias</AndroidSigningKeyAlias>
+		<AndroidSigningKeyPass>droll482</AndroidSigningKeyPass>
+		<AndroidSigningKeyStore>d:\User\Programmingstuff\C#\MobileDevelopment\Dice roll\dice-roll.keystore</AndroidSigningKeyStore>
+		<AndroidSigningStorePass>droll482</AndroidSigningStorePass>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net8.0-android|AnyCPU'">
+	  <AndroidKeyStore>True</AndroidKeyStore>
+		<AndroidSigningKeyAlias>dice-roll-alias</AndroidSigningKeyAlias>
+		<AndroidSigningKeyPass>droll482</AndroidSigningKeyPass>
+		<AndroidSigningKeyStore>d:\User\Programmingstuff\C#\MobileDevelopment\Dice roll\dice-roll.keystore</AndroidSigningKeyStore>
+		<AndroidSigningStorePass>droll482</AndroidSigningStorePass>
 	</PropertyGroup>
 
 	<ItemGroup>
 		<!-- App Icon -->
-		<MauiIcon Include="Resources\AppIcon\appicon.svg" ForegroundFile="Resources\AppIcon\appiconfg.svg" Color="#512BD4" />
+		<MauiIcon Include="Resources\AppIcon\dicerollicon.png" />
 
 		<!-- Splash Screen -->
 		<MauiSplashScreen Include="Resources\Splash\splash.svg" Color="#512BD4" BaseSize="128,128" />

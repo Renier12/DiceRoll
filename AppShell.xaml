@@ -9,14 +9,14 @@
 
     <TabBar>
         <ShellContent
-            Title="Introduction"
+            Title="Dice Roll"
+            ContentTemplate="{DataTemplate local:DRoll}"
+            Route="NewPage" />
+        
+        <ShellContent
+            Title="Information"
             ContentTemplate="{DataTemplate local:MainPage}"
             Route="MainPage" />
-
-        <ShellContent
-        Title="Dice Roll"
-        ContentTemplate="{DataTemplate local:DRoll}"
-        Route="NewPage" />
     </TabBar>
 
 
