@@ -9,8 +9,13 @@
             Spacing="40">          
             
             <Label
-                Text="This application will generate random dice rolls. Range of numbers is dependent on the size of dice selected. Multiple dice can be selected for a variety of games. The sum of the dice is calculated and displayed. The D10 is not included in the sum. A percentage is diaplayed for the D10 roll." />
-
+                Text="This application will generate random dice rolls. "/>
+            <Label
+                Text="Range of numbers is dependent on the size of dice selected. Multiple dice can be selected for a variety of games."></Label>
+            <Label
+                Text="The sum of the dice is calculated and displayed. Note: The D10 is not included in the calculation."></Label>
+            <Label
+                Text="A percentage is diaplayed for the D10 roll."></Label>
 
         </VerticalStackLayout>
     </ScrollView>

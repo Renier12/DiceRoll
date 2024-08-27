@@ -10,9 +10,10 @@
         <HorizontalStackLayout>
             <Label
 Padding="10"
-FontSize="20"
+FontSize="Large"
 Text="Select dice to roll">
             </Label>
+            
         </HorizontalStackLayout>
         <!--#endregion Heading-->
 
@@ -21,7 +22,12 @@ Text="Select dice to roll">
             <!--#region Dice1-->
             <VerticalStackLayout
 Padding="5">
-
+                <Label
+                    Padding="10"
+                    Text="Dice 1"
+                    FontSize="Body">
+                    
+                </Label>
                 <CheckBox  
 x:Name="checkBoxDice1"
 ScaleX="2.5"
@@ -35,7 +41,8 @@ CheckedChanged="checkBoxDice1CheckedChanged"
 x:Name="PickerDice1"
 Title="Dice Size"
 IsEnabled="False"
-HorizontalTextAlignment="Center">
+HorizontalTextAlignment="Center"
+                    FontSize="Body">
                     <Picker.ItemsSource>
                         <x:Array Type="{x:Type x:Int32}">
                             <x:Int32>4</x:Int32>
@@ -53,6 +60,12 @@ HorizontalTextAlignment="Center">
             <!--#region Dice2-->
             <VerticalStackLayout
 Padding="5">
+                <Label
+    Padding="10"
+    Text="Dice 2"
+                    FontSize="Body">
+
+                </Label>
 
                 <CheckBox  
 x:Name="checkBoxDice2"
@@ -67,7 +80,8 @@ CheckedChanged="checkBoxDice2CheckedChanged"
 x:Name="PickerDice2"
 Title="Dice Size"
 IsEnabled="False"
-HorizontalTextAlignment="Center">
+HorizontalTextAlignment="Center"
+                    FontSize="Body">
                     <Picker.ItemsSource>
                         <x:Array Type="{x:Type x:Int32}">
                             <x:Int32>4</x:Int32>
@@ -85,6 +99,12 @@ HorizontalTextAlignment="Center">
             <!--#region Dice3-->
             <VerticalStackLayout
 Padding="5">
+                <Label
+    Padding="10"
+    Text="Dice 3"
+                    FontSize="Body">
+
+                </Label>
 
                 <CheckBox  
 x:Name="checkBoxDice3"
@@ -94,12 +114,14 @@ IsChecked="False"
 CheckedChanged="checkBoxDice3CheckedChanged"
 >
                 </CheckBox>
+                
 
                 <Picker
 x:Name="PickerDice3"
 Title="Dice Size"
 IsEnabled="False"
-HorizontalTextAlignment="Center">
+HorizontalTextAlignment="Center"
+                    FontSize="Body">
                     <Picker.ItemsSource>
                         <x:Array Type="{x:Type x:Int32}">
                             <x:Int32>4</x:Int32>
@@ -117,6 +139,12 @@ HorizontalTextAlignment="Center">
             <!--#region Dice4-->
             <VerticalStackLayout
 Padding="5">
+                <Label
+    Padding="10"
+    Text="Dice 4"
+                    FontSize="Body">
+
+                </Label>
 
                 <CheckBox  
 x:Name="checkBoxDice4"
@@ -131,7 +159,8 @@ CheckedChanged="checkBoxDice4CheckedChanged"
 x:Name="PickerDice4"
 Title="Dice Size"
 IsEnabled="False"
-HorizontalTextAlignment="Center">
+HorizontalTextAlignment="Center"
+                    FontSize="Body">
                     <Picker.ItemsSource>
                         <x:Array Type="{x:Type x:Int32}">
                             <x:Int32>4</x:Int32>
@@ -149,6 +178,12 @@ HorizontalTextAlignment="Center">
             <!--#region DiceD10-->
             <VerticalStackLayout
 Padding="5">
+                <Label
+    Padding="10"
+    Text="D10"
+                    FontSize="Body">
+
+                </Label>
 
                 <CheckBox  
 x:Name="checkBoxDiceD10"
@@ -156,6 +191,7 @@ ScaleX="2.5"
 ScaleY="2.5"
 IsChecked="False"    
 CheckedChanged="checkBoxDiceD10CheckedChanged"
+                    Color="Black"
 >
                 </CheckBox>
 
@@ -163,7 +199,8 @@ CheckedChanged="checkBoxDiceD10CheckedChanged"
 x:Name="PickerDiceD10"
 Title="D10"
 IsEnabled="False"
-HorizontalTextAlignment="Center">
+HorizontalTextAlignment="Center"
+                    FontSize="Body">
                     <Picker.ItemsSource>
                         <x:Array Type="{x:Type x:Int32}">
                             <x:Int32>10</x:Int32>
@@ -179,54 +216,63 @@ HorizontalTextAlignment="Center">
 
         <!--#region Output-->
         <VerticalStackLayout>
+            <Label
+                Padding="10"
+                FontSize="Body"
+    HorizontalOptions="Start"
+    Text="You can change dice size by tapping on the number under the checkbox">
+            </Label>
+            
             <Button
 Text="Roll!"
-FontSize="50"
+FontSize="Title"
 Clicked="ButtonClicked"
 HorizontalOptions="FillAndExpand"
 Padding="40"
 />
+
             <Label
+                x:Name="LabelOutHeading"
 Padding="10"
-FontSize="30"
-Text="You Rolled:">
+FontSize="Body"
+Text="">
             </Label>
             <Label
 x:Name="LabelOutDice1"
 Padding="10"
-FontSize="20"
+FontSize="Body"
 Text=""
 />
             <Label
 x:Name="LabelOutDice2"
 Padding="10"
-FontSize="20"
+FontSize="Body"
 Text=""
 />
             <Label
 x:Name="LabelOutDice3"
 Padding="10"
-FontSize="20"
+FontSize="Body"
 Text=""
 />
             <Label
 x:Name="LabelOutDice4"
 Padding="10"
-FontSize="20"
+FontSize="Body"
+Text=""
+/>
+            <Label
+x:Name="LabelOutDiceD10"
+Padding="10"
+FontSize="Body"
 Text=""
 />
             <Label
 x:Name="LabelOutSum"
 Padding="10"
-FontSize="20" 
+FontSize="Body" 
 Text=""/>
 
-            <Label
-x:Name="LabelOutDiceD10"
-Padding="10"
-FontSize="20"
-Text=""
-/>
         </VerticalStackLayout>
         <!--#endregion Output-->
 

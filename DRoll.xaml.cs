@@ -8,13 +8,19 @@ public partial class DRoll : ContentPage
 	public DRoll()
 	{
 		InitializeComponent();
-	}
+
+        PickerDice1.SelectedItem = 6; 
+        PickerDice2.SelectedItem = 6;
+        PickerDice3.SelectedItem = 12;
+        PickerDice4.SelectedItem = 20;
+        PickerDiceD10.SelectedItem = 10;
+    }
 
     private int dice1Result;
     private int dice2Result;
     private int dice3Result;
     private int dice4Result;
-    private int diceSumResult;
+    private double diceSumResult;
     private double diceD10Result;
 
     Random randomNumber = new Random();
@@ -38,7 +44,7 @@ public partial class DRoll : ContentPage
             LabelOutDice1.IsVisible = true;
             dice1Result = RandomNumber(Convert.ToInt32(PickerDice1.SelectedItem));
             diceSumResult += dice1Result;
-            LabelOutDice1.Text = "Dice 1: " + dice1Result.ToString() + " ";
+            LabelOutDice1.Text = "Dice 1 (D" + Convert.ToInt32(PickerDice1.SelectedItem) + "): " + dice1Result.ToString() + " ";
         }
         else 
         {
@@ -49,7 +55,7 @@ public partial class DRoll : ContentPage
             LabelOutDice2.IsVisible = true;
             dice2Result = RandomNumber(Convert.ToInt32(PickerDice2.SelectedItem));
             diceSumResult += dice2Result;
-            LabelOutDice2.Text = "Dice 2: " + dice2Result.ToString() + " ";
+            LabelOutDice2.Text = "Dice 2 (D" + Convert.ToInt32(PickerDice2.SelectedItem) + "): " + dice2Result.ToString() + " ";
         }
         else
         {
@@ -60,7 +66,7 @@ public partial class DRoll : ContentPage
             LabelOutDice3.IsVisible = true;
             dice3Result = RandomNumber(Convert.ToInt32(PickerDice3.SelectedItem));
             diceSumResult += dice3Result;
-            LabelOutDice3.Text = "Dice 3: " + dice3Result.ToString() + " ";
+            LabelOutDice3.Text = "Dice 3 (D" + Convert.ToInt32(PickerDice3.SelectedItem) + "): " + dice3Result.ToString() + " ";
         }
         else
         {
@@ -71,7 +77,7 @@ public partial class DRoll : ContentPage
             LabelOutDice4.IsVisible = true;
             dice4Result = RandomNumber(Convert.ToInt32(PickerDice4.SelectedItem));
             diceSumResult += dice4Result;
-            LabelOutDice4.Text = "Dice 4: " + dice4Result.ToString() + " ";
+            LabelOutDice4.Text = "Dice 4 (D" + Convert.ToInt32(PickerDice4.SelectedItem) + "): " + dice4Result.ToString() + " ";
         }
         else
         {
@@ -81,13 +87,25 @@ public partial class DRoll : ContentPage
         {
             LabelOutDiceD10.IsVisible = true;
             diceD10Result = RandomNumber(Convert.ToInt32(PickerDiceD10.SelectedItem));
+            //diceSumResult += diceD10Result;
             LabelOutDiceD10.Text = "D10: " + diceD10Result.ToString() + " OR " + (diceD10Result*10).ToString() + "%";
         }
         else
         {
             LabelOutDiceD10.IsVisible = false;
         }
-        LabelOutSum.Text = "Sum of dice rolled: " + diceSumResult.ToString();
+        if (diceSumResult != 0)
+        {
+            LabelOutHeading.IsVisible = true;
+            LabelOutHeading.Text = "You've rolled: ";
+            LabelOutSum.IsVisible = true;
+            LabelOutSum.Text = "Sum of dice rolled: " + diceSumResult.ToString();
+        }
+        else
+        {
+            LabelOutHeading.IsVisible = false;
+            LabelOutSum.IsVisible = false;
+        }
     }
 
 #region Update UI
@@ -95,8 +113,7 @@ public partial class DRoll : ContentPage
     {
         if(checkBoxDice1.IsChecked == true)
         {
-            PickerDice1.IsEnabled = true;
-            PickerDice1.SelectedItem = 6;            
+            PickerDice1.IsEnabled = true;          
         }
         else
         {
@@ -107,8 +124,7 @@ public partial class DRoll : ContentPage
     {
         if (checkBoxDice2.IsChecked == true)
         {
-            PickerDice2.IsEnabled = true;
-            PickerDice2.SelectedItem = 6;            
+            PickerDice2.IsEnabled = true;            
         }
         else
         {
@@ -120,7 +136,6 @@ public partial class DRoll : ContentPage
         if (checkBoxDice3.IsChecked == true)
         {
             PickerDice3.IsEnabled = true;
-            PickerDice3.SelectedItem = 6;
         }
         else
         {
@@ -132,7 +147,6 @@ public partial class DRoll : ContentPage
         if (checkBoxDice4.IsChecked == true)
         {
             PickerDice4.IsEnabled = true;
-            PickerDice4.SelectedItem = 20;
         }
         else
         {
@@ -144,7 +158,6 @@ public partial class DRoll : ContentPage
         if (checkBoxDiceD10.IsChecked == true)
         {
             PickerDiceD10.IsEnabled = true;
-            PickerDiceD10.SelectedItem = 10;
         }
         else
         {
